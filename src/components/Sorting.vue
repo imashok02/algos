@@ -2,10 +2,12 @@
   <div class="hello">
     <h1>See the Sorting Algos in Action</h1>
 
-    <div class="hello" v-bind:key="value" v-for= "value in main_array">
-      <li>{{value}}</li>
+    <div class="value-block" v-bind:key="value[0]" v-for= "value in main_array">
+      <li class="digit">{{value}}</li>
       
     </div>
+
+    <button onclick="this.resetArray"></button>
   
   </div>
 </template>
@@ -23,7 +25,7 @@ export default {
   },
   methods: {
     resetArray () {
-      for(var i = 0; i < 40; i++){
+      for(var i = 0; i < 20; i++){
         this.main_array.push(this.randomValues(5, 100));
       }
     },
@@ -48,5 +50,18 @@ li {
 }
 a {
   color: #42b983;
+}
+.value-block {
+  width: 200px;
+  background-color: red;
+  display: block;
+  margin-left: 10px;
+  margin-right: auto;
+  text-align: center;
+  height: 30px;
+  margin-top: 10px;
+}
+.digit {
+  color: white;
 }
 </style>
